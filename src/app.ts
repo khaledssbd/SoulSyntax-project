@@ -8,9 +8,7 @@ import router from './app/routes';
 const app: Application = express();
 
 const corsConfig = {
-  origin: [
-    'http://localhost:5173',
-  ],
+  origin: ['http://localhost:5173'],
   // credentials: true,
 };
 
@@ -19,19 +17,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsConfig));
 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World From SoulSyntax! ✨');
+});
 
 // main router
 app.use('/api', router);
-
 
 // global error handling middleware
 app.use(globalErrorHandler);
 
 // Not Found page
 app.use(notFound);
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World From SoulSyntax! ✨');
-});
 
 export default app;

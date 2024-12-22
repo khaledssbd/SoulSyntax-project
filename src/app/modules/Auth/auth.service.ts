@@ -10,7 +10,7 @@ const createUserIntoDB = async (userData: TUser) => {
 
   const isEmailUsed = await User.isUserExistsByEmail(restData.email);
   if (isEmailUsed) {
-    throw new AppError(httpStatus.NOT_FOUND, 'This email is already used !');
+    throw new AppError(httpStatus.FORBIDDEN, 'This email is already used !');
   }
 
   const result = await User.create(restData);

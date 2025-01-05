@@ -10,7 +10,7 @@ const createUserIntoDB = async (userData: TUser) => {
 
   const isEmailUsed = await User.isUserExistsByEmail(restData.email);
   if (isEmailUsed) {
-    throw new AppError(httpStatus.FORBIDDEN, 'This email is already used !');
+    throw new AppError(httpStatus.CONFLICT, 'This email is already used !');
   }
 
   const result = await User.create(restData);
@@ -40,21 +40,14 @@ const loginUser = async (payload: TLoginUser) => {
     role: user.role,
   };
 
-  const accessToken = createToken(
+  const token = createToken(
     jwtPayload,
     config.jwt_access_secret as string,
     config.jwt_access_expires_in as string,
   );
 
-  const refreshToken = createToken(
-    jwtPayload,
-    config.jwt_refresh_secret as string,
-    config.jwt_refresh_expires_in as string,
-  );
-
   return {
-    accessToken,
-    refreshToken,
+    token,
   };
 };
 

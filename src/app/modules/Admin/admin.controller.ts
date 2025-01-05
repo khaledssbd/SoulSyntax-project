@@ -5,29 +5,23 @@ import { AdminServices } from './admin.service';
 
 const blockUser = catchAsync(async (req, res) => {
   const { userId } = req.params;
-
   await AdminServices.blockUserFromDB(userId);
-
   sendResponse(res, {
-    statusCode: httpStatus.OK,
     success: true,
     message: 'User blocked successfully',
-    data: {},
+    statusCode: httpStatus.OK,
   });
 });
+
 const deleteBlog = catchAsync(async (req, res) => {
   const { id } = req.params;
-
   await AdminServices.deleteBlogFromDB(id);
-
   sendResponse(res, {
-    statusCode: httpStatus.OK,
     success: true,
     message: 'Blog deleted successfully',
-    data: {},
+    statusCode: httpStatus.OK,
   });
 });
-
 
 export const AdminControllers = {
   blockUser,

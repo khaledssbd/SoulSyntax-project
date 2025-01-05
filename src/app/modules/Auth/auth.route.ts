@@ -12,7 +12,7 @@ router.post(
 );
 
 router.post(
-  '/login', // don't use auth() here
+  '/login',
   validateRequest(AuthValidations.loginValidationSchema), // middleware for validation
   AuthControllers.loginUser, // controller function
 );

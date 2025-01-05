@@ -15,15 +15,15 @@ const createBlogIntoDB = async (userData: JwtPayload, payload: TBlog) => {
     userData.userEmail,
   )) as HydratedDocument<TUser>; // Ensure _id exists in user
 
-  if (!user) {
-    throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
-  }
+  // if (!user) {
+  //   throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
+  // }
 
-  // checking if the user is already blocked
-  const isBlocked = user?.isBlocked;
-  if (isBlocked) {
-    throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
-  }
+  // // checking if the user is already blocked
+  // const isBlocked = user?.isBlocked;
+  // if (isBlocked) {
+  //   throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
+  // }
 
   const blogData = { ...payload, author: user._id };
   const result = await Blog.create(blogData);
@@ -45,15 +45,15 @@ const updateBlogIntoDB = async (
     userData.userEmail,
   )) as HydratedDocument<TUser>; // Ensure _id exists in user
 
-  if (!user) {
-    throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
-  }
+  // if (!user) {
+  //   throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
+  // }
 
-  // checking if the user is already blocked
-  const isBlocked = user?.isBlocked;
-  if (isBlocked) {
-    throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
-  }
+  // // checking if the user is already blocked
+  // const isBlocked = user?.isBlocked;
+  // if (isBlocked) {
+  //   throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
+  // }
 
   const isRightAuthor = await Blog.findOne({ _id: id, author: user._id });
   if (!isRightAuthor) {
@@ -83,15 +83,15 @@ const deleteBlogFromDB = async (id: string, userData: JwtPayload) => {
     userData.userEmail,
   )) as HydratedDocument<TUser>; // Ensure _id exists in user
 
-  if (!user) {
-    throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
-  }
+  // if (!user) {
+  //   throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
+  // }
 
-  // checking if the user is already blocked
-  const isBlocked = user?.isBlocked;
-  if (isBlocked) {
-    throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
-  }
+  // // checking if the user is already blocked
+  // const isBlocked = user?.isBlocked;
+  // if (isBlocked) {
+  //   throw new AppError(httpStatus.FORBIDDEN, 'This user is blocked !');
+  // }
 
   const isRightAuthor = await Blog.findOne({ _id: id, author: user._id });
   if (!isRightAuthor) {

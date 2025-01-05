@@ -6,18 +6,18 @@ const blogSchema = new Schema<TBlog, TBlogModel>(
   {
     title: {
       type: String,
-      required: [true, 'Blog title is required!'], // required
+      // required: [true, 'Blog title is required!'], // required
       // unique: true,
-      trim: true,
+      // trim: true,
     },
     content: {
       type: String,
-      required: [true, 'Blog content is required'], // required
-      trim: true,
+      // required: [true, 'Blog content is required'], // required
+      // trim: true,
     },
     author: {
       type: Schema.Types.ObjectId,
-      required: [true, 'Blog author id is required'], // required
+      // required: [true, 'Blog author id is required'], // required
       ref: 'User', // model name
     },
     // isPublished: {

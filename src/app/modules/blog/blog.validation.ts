@@ -17,11 +17,6 @@ const createBlogValidationSchema = z.object({
       })
       .trim()
       .min(10, { message: "Content can't be less then 10 characters" }),
-
-    //     author: z.string({
-    //       invalid_type_error: 'Author id must be string',
-    //       required_error: 'Author id is required',
-    //     }),
   }),
 });
 
@@ -45,11 +40,6 @@ const updateBlogValidationSchema = z.object({
       .trim()
       .min(10, { message: "Content can't be less then 10 characters" })
       .optional(),
-
-    //     author: z.string({
-    //       invalid_type_error: 'Author id must be string',
-    //       required_error: 'Author id is required',
-    //     }),
   }),
 });
 

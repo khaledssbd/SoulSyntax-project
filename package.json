@@ -17,7 +17,10 @@
   ],
   "license": "ISC",
   "main": "index.js",
-  "repository": "https://github.com/khaledssbd/SoulSyntax-project",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/khaledssbd/SoulSyntax-project.git"
+  },
   "homepage": "https://assignment-3-nosql.vercel.app",
   "version": "1.0.0",
   "scripts": {
@@ -30,10 +33,6 @@
     "format": "prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",

@@ -1,7 +1,25 @@
 {
   "name": "soul_syntax",
-  "version": "1.0.0",
+    "author": {
+    "name": "Khaled Siddique",
+    "email": "khaled@example.com",
+    "url": "https://khaled-siddique.vercel.app"
+  },
+  "description": "A Blog management web application that is made on express.js and has different routes for different requests.",
+  "keywords": [
+    "blog",
+    "react",
+    "typescript",
+    "mongoose",
+    "nodejs",
+    "expressjs",
+    "mongodb"
+  ],
+  "license": "ISC",
   "main": "index.js",
+  "repository": "https://github.com/khaledssbd/SoulSyntax-project",
+  "homepage": "https://assignment-3-nosql.vercel.app",
+  "version": "1.0.0",
   "scripts": {
     "start": "node ./dist/server.js",
     "start:prod": "node ./dist/server.js",

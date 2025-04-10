@@ -1,6 +1,6 @@
 {
   "name": "soul_syntax",
-    "author": {
+  "author": {
     "name": "Khaled Siddique",
     "email": "khaled@example.com",
     "url": "https://khaled-siddique.vercel.app"
@@ -17,11 +17,14 @@
   ],
   "license": "ISC",
   "main": "index.js",
-    "repository": {
+  "repository": {
     "type": "git",
-    "url": "https://github.com/khaledssbd/SoulSyntax-project.git"
+    "url": "git+https://github.com/khaledssbd/SoulSyntax-project.git"
   },
-  "homepage": "https://assignment-3-nosql.vercel.app",
+  "bugs": {
+    "url": "https://github.com/khaledssbd/SoulSyntax-project/issues"
+  },
+  "homepage": "https://github.com/khaledssbd/SoulSyntax-project#readme",
   "version": "1.0.0",
   "scripts": {
     "start": "node ./dist/server.js",
@@ -43,7 +46,6 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.1",
-    "ts-node-dev": "^2.0.0",
     "validator": "^13.12.0",
     "zod": "^3.23.8"
   },
@@ -62,6 +64,7 @@
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.12.0",
     "prettier": "^3.3.3",
+    "ts-node-dev": "2.0.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.14.0"
   }

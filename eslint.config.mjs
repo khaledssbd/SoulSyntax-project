@@ -5,17 +5,12 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
   {
+    files: ['**/*.{js,mjs,cjs,ts}'],
     languageOptions: {
-      globals: {
-        ...globals.browser, // ব্রাউজারের গ্লোবাল ভেরিয়েবল
-        ...globals.node, // Node.js গ্লোবাল ভেরিয়েবল
-      },
+      globals: { ...globals.browser, ...globals.node },
     },
-  },
-  {
-    ignores: ['node_modules', 'dist'], // ইগনোর করা ফোল্ডার
+    ignores: ['node_modules', 'dist'],
     rules: {
       'no-unused-vars': 'error',
       'no-unused-expressions': 'error',
